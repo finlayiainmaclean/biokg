@@ -1,13 +1,12 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+import sklearn
+import torch as th
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
-import torch as th
-
-import sklearn
 
 from biokg.embeddings.base import EmbeddingModel
 

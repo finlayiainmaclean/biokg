@@ -1,8 +1,9 @@
-from abc import ABC
-import torch as th
-from tqdm.auto import tqdm
 import copy
 import typing
+from abc import ABC
+
+import torch as th
+from tqdm.auto import tqdm
 
 
 class EmbeddingModel(th.nn.Module, ABC):

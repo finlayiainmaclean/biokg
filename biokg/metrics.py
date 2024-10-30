@@ -1,9 +1,11 @@
-from sklearn.metrics import roc_auc_score, average_precision_score, matthews_corrcoef
-import pingouin as pg
 import matplotlib.pyplot as plt
 import pandas as pd
+import pingouin as pg
 import seaborn as sns
+from sklearn.metrics import (average_precision_score, matthews_corrcoef,
+                             roc_auc_score)
 
+# Taken from Pat Walter's code that I now can't find
 def calc_classification_metrics(df_in, cycle_col="cv_cycle",
                                          val_col="y",
                                          prob_col="y_prob",

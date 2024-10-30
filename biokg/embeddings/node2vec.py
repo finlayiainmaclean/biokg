@@ -1,7 +1,7 @@
 
 import torch as th
-from torch_geometric.nn import Node2Vec
 from torch_geometric.data import Data
+from torch_geometric.nn import Node2Vec
 
 from biokg.embeddings.base import EmbeddingModel
 

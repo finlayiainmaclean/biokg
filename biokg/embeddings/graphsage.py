@@ -1,13 +1,13 @@
 
 import torch as th
+import torch.nn.functional as F
 from torch_geometric.data import Data
 from torch_geometric.loader import LinkNeighborLoader
 from torch_geometric.nn import GraphSAGE
-import torch.nn.functional as F
+
 from biokg.embeddings.base import EmbeddingModel
 
 
-          
 class GraphSAGEEmbedding(EmbeddingModel):
     def __init__(self,
                  data:Data,
