@@ -1,0 +1,15 @@
+pandas
+numpy
+numba
+seaborn
+torch_geometric
+tensorboard
+
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.3.0+cu118
+
+--find-links https://data.pyg.org/whl/torch-2.3.0+cu118.html
+torch_scatter
+torch_sparse
+torch_cluster
+torch_spline_conv

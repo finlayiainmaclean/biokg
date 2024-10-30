@@ -1,0 +1,10 @@
+name: base
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - widgetsnbextension
+  - cudatoolkit==11.8.0
+  - gcc==12.1.0
