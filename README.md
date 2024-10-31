@@ -27,9 +27,7 @@ The workflow can also be run using Docker (currently untested):
 
 1. `docker buildx build -t biokg -f Dockerfile .`
 
-2. ```
-docker run --gpus all -v "$(pwd)":/app/biokg/data biokg jupyter execute notebooks/1_data.ipynb notebooks/2_degree_distribution.ipynb notebooks/3_model.ipynb
-```
+2. ```docker run --gpus all -v "$(pwd)":/app/biokg/data biokg jupyter execute notebooks/1_data.ipynb notebooks/2_degree_distribution.ipynb notebooks 3_model.ipynb```
 
 ## Future improvements
 - Convert to using a (heterogenous GNN)[https://pytorch-geometric.readthedocs.io/en/2.6.0/notes/heterogeneous.html], where indivual nodes and meteaedges have their own encoding. Alternatively, we could use one of the many KGE methods in PyG.
