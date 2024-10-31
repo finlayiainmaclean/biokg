@@ -1,8 +1,5 @@
 # BioKG
 
-## Overview
-- 
-
 
 ## Instructions to reproduce
 
