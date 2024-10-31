@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y gnupg2 && apt-key adv --keyserver keyse
 
 WORKDIR /app/
 
-COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yaml requirements.txt ./
+COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yaml requirements.txt setup.py ./
 
 ENV MAMBA_NO_LOW_SPEED_LIMIT=1
 RUN --mount=type=cache,target=/opt/micromamba/pkgs,sharing=locked \
@@ -18,9 +18,18 @@ RUN --mount=type=cache,target=/opt/micromamba/pkgs,sharing=locked \
     micromamba install --name base --file environment.yaml && \
     micromamba clean --all --yes
 
+
 RUN --mount=type=secret,id=pip,target=/root/.pip/pip.conf \
-    micromamba run -n base pip install -r requirements.txt && \
-    micromamba run -n base pip install -e biokg
+    micromamba run -n base pip install -r requirements.txt
+
+COPY --chown=$MAMBA_USER:$MAMBA_USER biokg /app/biokg
+
+
+RUN echo $(ls)
+
+
+RUN --mount=type=secret,id=pip,target=/root/.pip/pip.conf \
+    micromamba run -n base pip install -e .
 
 ENV PATH="/opt/conda/bin:${PATH}"
 RUN echo 'alias jupyter_notebook="jupyter notebook --ip 0.0.0.0 --no-browser --allow-root"' >> ~/.bashrc

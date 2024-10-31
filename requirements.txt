@@ -4,6 +4,11 @@ numba
 seaborn
 torch_geometric
 tensorboard
+scikit-learn
+tqdm
+transformers
+matplotlib
+networkx
 
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch==2.3.0+cu118
